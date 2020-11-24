@@ -1,0 +1,16 @@
+.DS_store
+.idea
+build/*
+experiment_data/*
+**/__pycache__/*
+*.zip
+*.7z
+ray_results/*
+.cache/*
+compile_commands.json
+imgui.ini
+sampled/*
+libs/dart/*
+*.log
+logs/*
+CLAUDE.md

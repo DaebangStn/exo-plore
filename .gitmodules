@@ -1,0 +1,9 @@
+[submodule "libs/imgui"]
+	path = libs/imgui
+	url = https://github.com/ocornut/imgui.git
+[submodule "libs/implot"]
+	path = libs/implot
+	url = https://github.com/epezent/implot.git
+[submodule "libs/ImGuiFileDialog"]
+	path = libs/ImGuiFileDialog
+	url = https://github.com/aiekick/ImGuiFileDialog.git

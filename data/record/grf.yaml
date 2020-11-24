@@ -1,0 +1,14 @@
+record:
+  velocity:
+    enabled: false
+    hip: true
+    knee: true
+    ankle: true
+
+  foot: true
+  contact: true
+  grf: true
+
+sample:
+  cycle: 10
+  force_exo: True

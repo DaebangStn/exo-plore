@@ -1,0 +1,29 @@
+
+data:
+  name: b14_ma2_m3_hip_30000_0407_233227+memo_b13_U500_k0_cot_no_mod
+  batch_size: 128
+
+  in_lbl: [
+    "Phase",
+    "Stride",
+    "K",
+    "Delay",
+    # "Mass",
+  ]
+  out_lbl: [
+  #  "cot_ma2",
+   "cot_ma15",
+  ]
+  num_folds: null
+  fold_idx: 0
+  transform: 'metabolic'
+
+
+trainer:
+  max_epochs: 100000
+  log_every_n_steps: 1
+  lr: 0.1
+  save_every_n_epochs: 5
+
+model:
+  gp_type: simple

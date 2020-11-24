@@ -1,0 +1,103 @@
+name: exo
+channels:
+  - conda-forge
+  - pytorch
+  - nodefaults
+dependencies:
+  - python=3.8.19
+
+  # C++ build toolchain
+  - gcc_linux-64=14.1.0
+  - gxx_linux-64=14.1.0
+  - gcc_impl_linux-64=14.1.0
+  - gxx_impl_linux-64=14.1.0
+  - libgcc=14.1.0
+  - libgcc-devel_linux-64=14.1.0
+  - libstdcxx=14.1.0
+  - libstdcxx-devel_linux-64=14.1.0
+  - sysroot_linux-64=2.17
+  - kernel-headers_linux-64=3.10.0
+
+  # CUDA
+  - cuda-cudart=12.4.127
+  - cuda-cudart_linux-64=12.4.127
+  - cuda-nvrtc=12.4.127
+  - cuda-nvtx=12.4.127
+  - cuda-version=12.4
+  - cudnn=8.9.7.29
+  - nccl=2.22.3.1
+
+  # PyTorch
+  - pytorch=2.3.0
+
+  # Simulation dependencies
+  - assimp=5.4.2
+  - boost=1.84.0
+  - boost-cpp=1.84.0
+  - bullet=3.25
+  - bullet-cpp=3.25
+  - eigen=3.4.0
+  - fcl=0.7.0
+  - fmt=11.0.2
+  - libccd-double=2.1
+  - nlohmann_json=3.11.3
+  - octomap=1.10.0
+  - tinyxml2=10.0.0
+  - yaml-cpp=0.8.0
+
+  # Boost libraries
+  - libboost=1.84.0
+  - libboost-devel=1.84.0
+  - libboost-headers=1.84.0
+  - libboost-python=1.84.0
+  - libboost-python-devel=1.84.0
+
+  # OpenGL / GUI
+  - freeglut=3.2.2
+  - glad=0.1.36
+  - glfw=3.3.10
+  - libgl=1.7.0
+  - libgl-devel
+  - libglu=9.0.0
+  - libglvnd=1.7.0
+  - libglx=1.7.0
+  - libopengl
+  - mesalib=24.2.3
+
+  # Progress bar for C++ export
+  - indicators=2.3
+
+  # Python build
+  - pybind11=2.13.5
+  - pybind11-global=2.13.5
+
+  # Scientific Python
+  - numpy=1.23.4
+  - scipy=1.10.1
+  - pandas=2.0.3
+  - polars=1.5.0
+  - scikit-learn=1.3.2
+  - matplotlib-base=3.7.3
+
+  # Data I/O
+  - hdf5=1.14.3
+  - pyyaml=6.0.2
+  - yaml=0.2.5
+  - fastparquet=2024.2.0
+
+  # Python tools
+  - pip=24.3.1
+  - setuptools=66.1.1
+  - gitpython=3.1.43
+  - dill=0.3.9
+  - tqdm=4.67.1
+  - pytest=8.3.4
+  - pybullet=3.25
+  - scikit-optimize=0.10.2
+
+  - pip:
+      - ray[rllib]==2.0.1
+      - gym==0.23.0
+      - fastdtw==0.3.4
+      - plotext==5.3.2
+      - tensorboardX==2.6.2.2

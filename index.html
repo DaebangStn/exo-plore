@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content=".">
+  <meta name="keywords" content=".">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exo-plore: Exploring Exoskeleton Control space through Human-Aligned Simulation</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./static/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./static/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./static/images/favicon-16x16.png">
+  <link rel="manifest" href="./static/images/site.webmanifest">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"><span class="dnerf">Exo-plore</span>: Exploring Exoskeleton Control space through Human-Aligned Simulation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://daebangstn.github.io/">Geonho Leem</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://jaedong-holiday.github.io/">Jaedong Lee</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://mrl.snu.ac.kr/~jehee/">Jehee Lee</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="http://seungmoon.com/">Seungmoon Song</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="https://sites.google.com/view/jungdam">Jungdam Won</a><sup>1</sup></span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Seoul National University,</span>
+            <span class="author-block"><sup>2</sup>Holiday Robotics,</span>
+            <span class="author-block"><sup>3</sup>Northeastern University</span>
+          </div>
+
+          <div class="column has-text-centered">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2601.22550"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/DaebangStn/exo-plore"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/DaebangStn/exo-plore"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-database"></i>
+                  </span>
+                  <span>Data</span>
+                </a>
+              </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%" playbackRate="0.8">
+        <source src="./static/videos/teaser1.mp4"
+                type="video/mp4">
+      </video>
+      <script>
+        document.getElementById('teaser').playbackRate = 0.8;
+      </script>
+      <h2 class="subtitle has-text-centered is-size-3">
+        <span class="dnerf">Exo-plore</span> finds optimal exoskeleton control parameters using <span class="red">musculoskeletal simulation only</span>.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="container is-max-desktop">
+    <div class="item is-centered has-text-centered mb-6 mt-6">
+      <h2 class="title is-1">Why we need physics simulation?</h2>
+      
+      <figure>
+        <video id="framework" muted loop autoplay playsinline
+        style="width: 100%; height: auto;">
+          <source src="./static/videos/hilo2.mp4" type="video/mp4">
+        </video>
+        
+        <p class="is-size-3 mt-4" style="line-height: 1.8;">
+          Previous methods requires <strong>demanding experiments</strong> involving hours of walking, 
+          paradoxically deterring those who would benefit most: people with mobility impairments.
+        </p>
+        <br><br>
+        <figcaption class="is-size-7 mt-2">
+          Figures and videos from:  
+          <cite>[1] Gordon, Daniel FN, et al. "Human-in-the-loop optimization of exoskeleton assistance via online simulation of metabolic cost." <i>IEEE Transactions on Robotics</i> 38.3 (2022): 1410-1429.</cite><br>
+          <cite>[2] Ding, Ye, et al. "Human-in-the-loop optimization of hip assistance with a soft exosuit during walking." <i>Science Robotics</i> 3.15 (2018): eaar5438.</cite>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-fullhd">
+    <div class="column">
+        <div class="content">
+          <h2 class="is-size-3 has-text-centered mb-4">
+            What is our optimization target?
+          </h2>
+          <figure class="has-text-centered mt-6">
+            <img src="./static/images/argmin.png" alt="Assistive Torque Formula" style="width: 50%; height: auto;">
+          </figure>
+      
+          <p class="mt-4 is-size-4">
+            Our goal is to find the optimal exoskeleton control parameters (<i>&kappa;</i>, &Delta;t) that minimize metabolic cost under torque assistance <i>&tau;</i>.
+          </p>
+          <figure class="has-text-centered mt-6">
+            <img src="./static/images/environment.jpg" alt="Assistive Torque Formula" style="width: 25%; height: auto;">
+          </figure>
+          <figure class="has-text-centered mt-6">
+            <img src="./static/images/control.png" alt="Assistive Torque Formula" style="width: 35%; height: auto;">
+          </figure>
+
+          <p class="mt-4 is-size-4">
+            In our exoskeleton<sup><a href="#lim2019" style="font-size:0.7em;">[3]</a></sup>, torque assistance (&tau;) is modulated by two control parameters: the gain (&kappa;) scales the torque magnitude, while the delay (&Delta;t) introduces temporal lag for the output (i.e., delayed-feedback control). The control signal is given by y(t) = sin(&theta;<sub>r</sub> &minus; &theta;<sub>l</sub>), which encodes the relative motions of the two legs, where &theta;<sub>r</sub> and &theta;<sub>l</sub> denote the right and left hip joint angles, respectively.
+          </p>
+          <div id="lim2019" class="is-size-7" style="margin-top: -1em;">
+            [3] <cite>Lim, Bokman, et al. "Delayed output feedback control for gait assistance and resistance using a robotic exoskeleton." <i>IEEE Robotics and Automation Letters</i> 4.4 (2019): 3521-3528.</cite>
+          </div>
+          <!-- <p class="mt-4 is-size-5"> -->
+            <!-- where y(t) = sin(&theta;<sub>r</sub> &minus; &theta;<sub>l</sub>) is a control signal encoding the relative motions of the two legs, -->
+            <!-- &theta;<sub>r</sub> and &theta;<sub>l</sub> denote the right and left hip joint angles, respectively.  -->
+            <!-- &kappa; and &Delta;t are control parameters,  -->
+            <!-- where the gain &kappa; scales the torque magnitude, while the delay  -->
+            <!-- &Delta;t introduces temporal lag for the output (i.e., delayed-feedback control). -->
+          <!-- </p> -->
+        </div>
+    </div>
+    <br><br>
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-1">Framework Overview</h2>
+        <figure class="has-text-centered mt-4">
+          <img src="./static/images/framework.png" alt="" style="width: 100%; height: auto;">
+        </figure>
+        <p class="mt-4 is-size-4 content has-text-justified">
+          <strong>The Exo-plore framework.</strong>
+          The generator produces gait trajectories under hip exoskeleton assistance using a musculoskeletal character with 164 muscles. 
+          Through our sim-to-real matching approach, 
+          these trajectories replicate the adaptation patterns and metabolic responses observed in real human experiments. 
+          The generated data are then used to train a surrogate network, which enables efficient and customizable optimization of exoskeleton control parameters.
+        </p>
+      </div>
+    </div>
+    <br><br>
+    <!--/ Paper video. -->
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths is-max-desktop">
+        <h2 class="title is-2">Abstract</h2>
+        <div class="content has-text-justified is-size-5">
+          Exoskeletons show great promise for enhancing mobility, 
+          but providing appropriate assistance remains challenging due to the complexity of human adaptation to external forces. 
+          Current state-of-the-art approaches for optimizing exoskeleton controllers require extensive human experiments in which participants must walk for hours, 
+          creating a paradox: those who could benefit most from exoskeleton assistance, such as individuals with mobility impairments, 
+          are often unable to participate in such demanding procedures. 
+          We present Exo-plore, a simulation framework that combines neuromechanical simulation with deep reinforcement learning to optimize hip exoskeleton assistance without requiring real human experiments. 
+          Exo-plore can (1) generate realistic gait data that captures human adaptation to assistive forces, 
+          (2) produce reliable optimization results despite the stochastic nature of human gait, and 
+          (3) generalize to pathological gaits, showing strong linear relationships between pathology severity and optimal assistance. 
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-fullhd">
+  <h2 class="title is-2 has-text-centered">Results</h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="content">
+        <!-- Gait Generation (Unassisted) -->
+        <div class="box mb-5">
+          <h3 class="title is-3">Gait Generation (Unassisted)</h3>
+          <p class="has-text-justified is-size-4">
+            As a useful sanity check, <span class="dnerf">Exo-plore</span> generates realistic human gait patterns without assistive forces, 
+            with overall joint kinematics and variability closely resembling those of healthy walking.
+          </p>
+          <figure class="has-text-centered mt-4">
+            <img src="./static/images/normal_kinematics2.png" alt="Unassisted Gait Generation Results" style="width: 100%; height: auto;">
+          </figure>
+        </div>
+        
+        <!-- Gait Generation (Assisted) -->
+        <div class="box mb-5">
+          <h3 class="title is-3">Gait Generation (Assisted)</h3>
+          <p class="has-text-justified is-size-4">
+            <span class="dnerf">Exo-plore</span> captures realistic hip kinematics and assistive dynamics across walking speeds, 
+            validating its effectiveness through consistent trends in both motion and power outputs.
+          </p>
+          <figure class="has-text-centered mt-4">
+            <img src="./static/images/exo_kinematics.png" alt="Assisted Gait Generation Results" style="width: 100%; height: auto;">
+          </figure>
+        </div>        
+        <!-- Able-bodied Individuals -->
+        <div class="box mb-5">
+          <h3 class="title is-3">Optimization Results</h3>
+          <p class="has-text-justified is-size-4">
+            We demonstrate the applicability of <span class="dnerf">Exo-plore</span> by discovering and analyzing optimal exoskeleton 
+            control parameters for both able-bodied and disabled individuals.
+          </p>
+          <figure class="has-text-centered mt-4">
+            <img src="./static/images/merge2_exo_vel_ref_gait_separated.png" alt="Assisted Gait Generation Results" style="width: 60%; height: auto;">
+          </figure>
+
+          <!-- <p class="has-text-justified is-size-4">
+            In addition, we conducted an extensive investigation of the surrogate network, enabling reliable optimization results.
+          </p>
+          <figure class="has-text-centered mt-4">
+            <img src="./static/images/exo_benefit_by_version2.png" alt="Assisted Gait Generation Results" style="width: 66%; height: auto;">
+          </figure>
+          <figure class="has-text-centered mt-4">
+            <img src="./static/images/exo_benefit_supporting.png" alt="Assisted Gait Generation Results" style="width: 90%; height: auto;">
+          </figure> -->
+        </div>
+        
+        <!-- Pathological Gait -->
+        <div class="box">
+          <h3 class="title is-3">Generalization to the pathologic gait</h3>
+          <video id="teaser2" muted loop autoplay playsinline playbackRate="0.6"
+          style="width: 100%; height: auto;">
+          <source src="./static/videos/teaser2.mp4" type="video/mp4">
+        </video>
+
+        <p class="has-text-justified is-size-4">
+          We evaluate <span class="dnerf">Exo-plore</span> across five musculoskeletal disorder types, 
+          revealing clear links between optimal exoskeleton assistance and the severity of each condition.
+        </p>
+
+      <figure class="has-text-centered mt-4">
+        <img src="./static/images/pathology_trend3.png" alt="Pathological Gait Optimization Results" style="width: 100%; height: auto;">
+      </figure>
+
+      <p class="has-text-justified is-size-4">
+        Below, we provide rich visualizations and detailed descriptions for each gait pathology.
+      </p>
+      <figure class="has-text-centered mt-4">
+        <img src="./static/images/merged_kinematics_analysis.png" alt="Pathological Gait Optimization Results" style="width: 100%; height: auto;">
+      </figure>
+
+      <video id="teaser3" muted loop autoplay playsinline playbackRate="0.25"
+      style="width: 100%; height: auto;">
+      <source src="./static/videos/teaser3.mp4" type="video/mp4">
+    </video>
+    <script>
+      document.getElementById('teaser2').playbackRate = 0.6;
+      document.getElementById('teaser3').playbackRate = 0.25;
+    </script>
+    <p class="is-size-4 has-text-grey mt-2">* slowed x0.25 for detailed comparison.</p>
+
+    <table class="table is-striped is-hoverable is-fullwidth">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Cause</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Equinus</td>
+          <td>Contracture in Triceps surae</td>
+          <td class="has-text-left">
+            Walking on the toes due to persistent plantarflexion of the
+            ankle. The heel does not touch the ground during gait.
+          </td>
+        </tr>
+        <tr>
+          <td>Waddling</td>
+          <td>Weakness in Gluteus</td>
+          <td class="has-text-left">
+            Swaying of the trunk from side to side while walking due to
+            weakness of the gluteal muscles, which fail to stabilize the
+            pelvis. This gait is also referred to as a waddling or
+            “duck-like” gait.
+          </td>
+        </tr>
+        <tr>
+          <td>Crouch</td>
+          <td>Contracture in Psoas</td>
+          <td class="has-text-left">
+            Walking in a flexed, crouched posture, which maintains the
+            hips in persistent flexion, often accompanied by knee
+            flexion.
+          </td>
+        </tr>
+        <tr>
+          <td>Calcaeous</td>
+          <td>Weakness in Triceps surae</td>
+          <td class="has-text-left">
+            Walking with the heel contacting the ground first due to
+            weakness of the triceps surae muscles, leading to excessive
+            dorsiflexion of the ankle.
+          </td>
+        </tr>
+        <tr>
+          <td>Footdrop</td>
+          <td>Weakness in Tibialis anterior</td>
+          <td class="has-text-left">
+            Inability to dorsiflex the ankle during foot-off, resulting in
+            the toes dragging on the ground. Patients often compensate
+            with high-stepping gait.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+            Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            This page is borrowed from the <a href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

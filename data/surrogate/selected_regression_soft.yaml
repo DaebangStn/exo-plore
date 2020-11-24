@@ -1,0 +1,68 @@
+data:
+  name: a
+  batch_size: 65536
+
+  in_lbl: [
+#    "velocity",
+    "Phase",
+    "Stride",
+    # "K",
+    # "Delay",
+    # "Mass",
+  ]
+  out_lbl: [
+   "velocity",
+  #  "cot_ma",
+   "cot_ma15",
+  #  "cot_ma3",
+  ]
+  num_folds: null
+  fold_idx: 0
+  transform: metabolic
+  tensor_ds: true
+
+trainer:
+  # profiler: 'simple'
+  max_epochs: 10002
+  precision: "16-mixed"
+
+  # If batch is large, make this value small to avoid overhead
+  log_every_n_steps: 1
+
+  logger:
+    class_path: eo.learn.log.MemoLogger
+    init_args:
+      memo: ""
+
+  callbacks:
+    - class_path: eo.learn.log.EpochPBar
+    - class_path: lightning.pytorch.callbacks.LearningRateMonitor
+      init_args:
+        logging_interval: 'epoch'
+    - class_path: lightning.pytorch.callbacks.ModelCheckpoint
+      init_args:
+        save_weights_only: True
+        monitor: 'loss/train'
+        mode: 'min'
+        save_top_k: 3
+        filename: '{ep:.0f}_{loss:.2f}'
+
+
+model:
+  residual: true
+  lr: 0.1
+  min_lr: 0.0005
+  # min_lr: 0.000013
+  layers: [64, 32]
+  # layers: [64, 64, 32]
+  # grad_weight: 0.0
+  # grad_weight: 0.0005
+  grad_weight: 0.01
+  recon_type: 'huber'
+  recon_delta: 1.0
+  recon_weight: 10
+  l1_weight: 0.001
+  l2_weight: 0.001
+  # l1_weight: 0.0000054
+  # l2_weight: 0.000023
+#  act_type: torch.nn.Tanh

@@ -1,0 +1,15 @@
+record:
+  power: true
+  foot: true
+  moment: true
+  angle:
+    enabled: true
+    hip: true
+    knee: false
+    ankle: false
+
+sample:
+  cycle: 10
+  force_exo: True
+  modulate: True
+  zero_state: False

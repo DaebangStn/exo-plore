@@ -1,0 +1,43 @@
+record:
+  metabolic:
+    enabled: true
+    a: false
+    a2: false
+    a3: false
+
+    m05a: false
+    m05a2: false
+    m05a3: false
+
+    m2a: false
+    m2a2: false
+    m2a3: false
+
+    ma: false
+    ma2: false
+    ma3: false
+
+    a15: false
+    m05a15: false
+    ma15: false
+    m2a15: false
+
+    a125: false
+    m05a125: false
+    ma125: false
+    m2a125: true
+
+  foot: true
+  power: false
+  moment: false
+  angle:
+    enabled: false
+    hip: false
+    knee: false
+    ankle: false
+
+sample:
+  cycle: 10
+  force_exo: True
+  modulate: False
+  zero_state: false

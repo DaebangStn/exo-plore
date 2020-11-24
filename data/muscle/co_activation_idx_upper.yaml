@@ -1,0 +1,168 @@
+L_Adductor_Brevis:
+- 6
+- 8
+L_Adductor_Longus:
+- 10
+- 12
+L_Adductor_Magnus:
+- 14
+- 16
+- 18
+- 20
+- 22
+L_Bicep_Femoris_Short:
+- 26
+- 28
+L_Extensor_Digitorum_Longus:
+- 30
+- 32
+- 34
+- 36
+L_Flexor_Digitorum_Longus:
+- 42
+- 44
+- 46
+- 48
+L_Flexor_Hallucis:
+- 50
+- 52
+L_Gluteus_Maximus:
+- 58
+- 60
+- 62
+- 64
+- 66
+L_Gluteus_Medius:
+- 68
+- 70
+- 72
+- 74
+L_Gluteus_Minimus:
+- 76
+- 78
+- 80
+L_Internal_Oblique:
+- 0
+- 2
+- 4
+L_Peroneus_Tertius:
+- 96
+- 98
+L_Piriformis:
+- 100
+- 102
+L_Psoas_Major:
+- 108
+- 110
+- 112
+L_Rectus_Femoris:
+- 116
+- 118
+L_Semimembranosus:
+- 122
+- 124
+L_Soleus:
+- 128
+- 130
+L_Tensor_Fascia_Lata:
+- 134
+- 136
+- 138
+L_Vastus_Intermedius:
+- 144
+- 146
+L_Vastus_Lateralis:
+- 148
+- 150
+L_Vastus_Medialis:
+- 152
+- 154
+- 156
+L_iliacus:
+- 158
+- 160
+- 162
+R_Adductor_Brevis:
+- 7
+- 9
+R_Adductor_Longus:
+- 11
+- 13
+R_Adductor_Magnus:
+- 15
+- 17
+- 19
+- 21
+- 23
+R_Bicep_Femoris_Short:
+- 27
+- 29
+R_Extensor_Digitorum_Longus:
+- 31
+- 33
+- 35
+- 37
+R_Flexor_Digitorum_Longus:
+- 43
+- 45
+- 47
+- 49
+R_Flexor_Hallucis:
+- 51
+- 53
+R_Gluteus_Maximus:
+- 59
+- 61
+- 63
+- 65
+- 67
+R_Gluteus_Medius:
+- 69
+- 71
+- 73
+- 75
+R_Gluteus_Minimus:
+- 77
+- 79
+- 81
+R_Internal_Oblique:
+- 1
+- 3
+- 5
+R_Peroneus_Tertius:
+- 97
+- 99
+R_Piriformis:
+- 101
+- 103
+R_Psoas_Major:
+- 109
+- 111
+- 113
+R_Rectus_Femoris:
+- 117
+- 119
+R_Semimembranosus:
+- 123
+- 125
+R_Soleus:
+- 129
+- 131
+R_Tensor_Fascia_Lata:
+- 135
+- 137
+- 139
+R_Vastus_Intermedius:
+- 145
+- 147
+R_Vastus_Lateralis:
+- 149
+- 151
+R_Vastus_Medialis:
+- 153
+- 155
+- 157
+R_iliacus:
+- 159
+- 161
+- 163

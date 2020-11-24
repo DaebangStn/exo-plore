@@ -1,0 +1,26 @@
+record:
+  metabolic:
+    enabled: true
+    a2: false
+    a3: false
+    ma2: true
+    ma3: false
+  foot: true
+  power: true
+  moment: true
+  angle:
+    enabled: true
+    hip: true
+    knee: false
+    ankle: false
+  velocity:
+    enabled: true
+    hip: true
+    knee: false
+    ankle: false
+
+sample:
+  cycle: 10
+  force_exo: True
+  modulate: False
+  zero_state: false

@@ -1,0 +1,12 @@
+record:
+  metabolic:
+    enabled: false
+
+  activation:
+    leg: true
+
+sample:
+  cycle: 20
+  force_exo: True
+  modulate: False
+  zero_state: false

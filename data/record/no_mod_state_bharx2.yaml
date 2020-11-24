@@ -1,0 +1,36 @@
+record:
+  metabolic:
+    enabled: true
+    a: false
+    a2: false
+    a3: false
+
+    m05a: false
+    m05a2: false
+    m05a3: false
+
+    m2a: false
+    m2a2: false
+    m2a3: false
+
+    ma: false
+    ma2: false
+    ma3: false
+    
+    bhar: true
+
+  foot: true
+  power: false
+  moment: false
+  angle:
+    enabled: false
+    hip: false
+    knee: false
+    ankle: false
+
+sample:
+  cycle: 10
+  force_exo: True
+  modulate: False
+  zero_state: false
+  shortening_multiplier: 2.0  # BHAR shortening rate multiplier (default: 1.0 for backward compatibility)

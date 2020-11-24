@@ -1,0 +1,62 @@
+hip:
+  extensor:
+    - "Gluteus_Maximus"
+    - "Adductor_Magnus"
+    - "Bicep_Femoris_Longus"
+    - "Semimembranosus"
+    - "Semitendinosus"
+  flexor:
+    - "iliacus"
+    - "Psoas_Major"
+    - "Rectus_Femoris"
+    - "Sartorius"
+    - "Adductor_Brevis"
+    - "Adductor_Longus"
+    - "Pectineus"
+
+knee:
+  extensor:
+    - "Rectus_Femoris"
+    - "Vastus_Intermedius"
+    - "Vastus_Lateralis"
+    - "Vastus_Medialis"
+  flexor:
+    - "Bicep_Femoris_Longus"
+    - "Bicep_Femoris_Short"
+    - "Gastrocnemius_Medial_Head"
+    - "Gastrocnemius_Lateral_Head"
+    - "Semimembranosus"
+    - "Semitendinosus"
+    - "Popliteus"
+    - "Sartorius"
+    - "Gracilis"
+
+ankle:
+  flexor:
+    - "Tibialis_Anterior"
+    - "Extensor_Digitorum_Longus"
+    - "Extensor_Hallucis_Longus"
+  extensor:
+    - "Gastrocnemius_Lateral_Head"
+    - "Gastrocnemius_Medial_Head"
+    - "Soleus"
+    - "Tibialis_Posterior"
+    - "Flexor_Hallucis"
+    - "Flexor_Digitorum_Longus"
+    - "Peroneus_Brevis"
+    - "Peroneus_Longus"
+    - "Plantaris"
+
+nc:
+  - "Flexor_Digiti_Minimi_Brevis_Foot"
+  - "Gluteus_Medius"
+  - "Gluteus_Minimus"
+  - "Inferior_Gemellus"
+  - "Obturator_Externus"
+  - "Obturator_Internus"
+  - "Peroneus_Tertius"
+  - "Piriformis"
+  - "Quadratus_Femoris"
+  - "Superior_Gemellus"
+  - "Tensor_Fascia_Lata"
+  - "Psoas_Minor"

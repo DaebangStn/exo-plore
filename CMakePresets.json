@@ -1,0 +1,50 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 24,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "gui",
+            "hidden": false,
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/gui",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "SERVER_BUILD": false,
+                "CUDAToolkit_ROOT": "/usr/local/cuda",
+                "CUDA_TOOLKIT_ROOT_DIR": "/usr/local/cuda",
+                "CMAKE_CUDA_COMPILER": "/usr/local/cuda/bin/nvcc"
+            }
+        },
+        {
+            "name": "headless",
+            "hidden": false,
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/headless",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "SERVER_BUILD": true,
+                "CUDAToolkit_ROOT": "/usr/local/cuda",
+                "CUDA_TOOLKIT_ROOT_DIR": "/usr/local/cuda",
+                "CMAKE_CUDA_COMPILER": "/usr/local/cuda/bin/nvcc"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "gui",
+            "description": "Build with GUI rendering support",
+            "displayName": "GUI Build",
+            "configurePreset": "gui"
+        },
+        {
+            "name": "headless",
+            "description": "Build without GUI for server/training",
+            "displayName": "Headless Build",
+            "configurePreset": "headless"
+        }
+    ]
+}

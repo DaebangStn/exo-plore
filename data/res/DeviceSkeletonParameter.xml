@@ -1,0 +1,13 @@
+<ModifyDeviceInfo>
+	<Bone body="Controller" info="1 1 1 1.0 0"/>
+	<Bone body="ControllerRight" info="1 1 1 1.0 0"/>
+	<Bone body="ControllerLeft" info="1 1 1 1.0 0"/>
+	<Bone body="RodRight" info="1 1 1 1.0 0"/>
+	<Bone body="RodLeft" info="1 1 1 1.0 0"/>
+	<Bone body="FastenerRightOut" info="1 1 1 1.0 0"/>
+	<Bone body="FastenerRightFront" info="1 1 1 1.0 0"/>
+	<Bone body="FastenerRightBack" info="1 1 1 1.0 0"/>
+	<Bone body="FastenerLeftOut" info="1 1 1 1.0 0"/>
+	<Bone body="FastenerLeftFront" info="1 1 1 1.0 0"/>
+	<Bone body="FastenerLeftBack" info="1 1 1 1.0 0"/>
+</ModifyDeviceInfo>

@@ -1,0 +1,191 @@
+environment:
+  state:
+    sym_gait: true
+    foot_clear: true
+    velocity: false
+
+  action:
+    scale: 0.04
+    phase_scale: 0.001
+    time_warp: true
+    upper: true
+    mirror_act: true
+
+  skeleton:
+    # 0: torque, 1: full muscle, 2: lower muscle
+    joint: 2
+    damping: 0.04
+    file: data/human/hip.sk.xml
+    parameter: data/res/SkeletonParameter.xml
+
+    muscle:
+      fast_mode: false
+      type: 1
+      mass_type: 2
+      metabolic_type: 4
+      extension_len_ratio_clip: 1.07
+      file: data/muscle/upper.xml
+
+  device:
+    enable: True
+    coupling:
+      damp: 10.0
+      stiff: 100.0
+    state:
+      include: True
+      offset: 1
+      history: 16
+      append_long_horizon: True
+      direction:
+        angle: 2
+        torque: 0
+    file: data/device/device_hip_GEMS2.xml
+    parameter: data/res/DeviceSkeletonParameter.xml
+
+  motion:
+    cycle: True
+    file: data/res/walk.bvh
+
+  reward:
+    foot_symmetry: False
+    use_foot_offset: True
+    energy:
+      mode: 1
+      curve: 2
+      act_coeff: 2.5
+      torque_coeff: -1.0
+    head:
+      margin_ratio: 3
+      acc_y: 0.0
+    velocity:
+      coeff: 10.0
+      margin: 0.0
+    sway:
+      margin_ratio: 2
+      tilt: 5
+      oblique: 5
+      rotation: 15
+      # bitwise (1 << 0: arm, 1 << 1: pelvis, 1 << 2: spine, 1 << 3: foot_x, 1 << 4: foot_angle)
+      type: 30
+    imitation:
+      type: 0 # -1: no imitation, 0: upper body
+      pos_coeff: 10.0
+      vel_coeff: 0.0
+    device:
+      type: -1
+      mutliply: false
+      coeff: 4.0
+
+  simulation:
+    control_hz: 50
+    simulation_hz: 500
+    device_hz: 100
+    self_collision: True
+
+
+learning:
+  override_ppo_config:
+    train_batch_size: 8192
+    gp_lambda: 0.0
+  ckpt_freq: 1000
+  adaptive_sampling:
+    enable: false
+    # Higher values make differences more extreme
+    temperature: 0.025
+    # Minimum episodes per bin before considering for sampling
+    min_count: 5
+    # How often to aggregate bin statistics across workers
+    update_frequency: 20
+    accum_lpf: true
+    accum_lpf_alpha: 0.001
+
+  # See also, python/gait_generator/env.py MyEnv.CreateInitState
+  param: # Sampled parameters, category -> key -> value or sampling method
+    reward_imitation:
+      sample:
+        value: [0.1, 1.0]
+        step: [200, 300]
+        type: "linear"
+    reward_device:
+      value: 0.0
+    device_force_weight:
+      value: 1.0
+    reward_loco:
+      value: 2.0
+    reward_head:
+      value: 4
+    reward_sway:
+      value: 1.5
+    reward_metabolic:
+      sample:
+        value: [0.1, 0.35]
+        step: [200, 300]
+        type: "linear"
+    stride:
+      sample:
+        value: [0.2, 1.4]
+        step: [50, 200]
+        type: "diffuse"
+    phase:
+      sample:
+        value: [0.7, 1.4]
+        step: [50, 200]
+        type: "diffuse"
+    k:
+      sample:
+        value: [0.0, 0.7]
+        type: "uniform"
+    delay:
+      sample:
+        value: [0.0, 0.5]
+        type: "uniform"
+
+  hparam:
+    logstd: 1.0
+    learn_logstd: false
+    value_fn:
+      pretrain_epoch: 0
+      restore: true
+    modulation:
+      start: 1000000000000
+      full_state: True
+      restore: False
+      latent: false
+      net1:
+        enable: true
+        scale: 1.0
+        zero_init: false
+      net2:
+        enable: true
+        scale: 1.0
+        zero_init: false
+      net3:
+        enable: true
+        scale: 1.0
+        zero_init: false
+      net4:
+        zero_init: false
+        enable: true
+        mask_ubody: true
+        scale: -1.0
+
+      # TODO: This is not implemented yet
+      adaptive_gain:
+        enable: True
+        offset: 0.05
+      mask_ubody_sigma: False
+
+    muscle_learner:
+      # batch size is determined by the pd network's "sgd_minibatch_size"
+      freeze: false
+      lr_start: 1e-4
+      lr_end: 1e-4
+      start_epoch: 1000
+      end_epoch: 5000
+      co_act_crit: 0.1
+      epoch: 5
+      loss:
+        w_regularize: 0.01
+        w_regression: 1.0
+        w_co_act: 0.1
+      co_act_idx: data/muscle/co_activation_idx_upper.yaml

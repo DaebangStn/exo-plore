@@ -1,0 +1,52 @@
+record:
+  metabolic:
+    enabled: false
+    partwise: false
+    bhar: true
+    mine: true
+    houd: true
+    a: true
+    a2: true
+    a3: true
+    fa: true
+    fa2: true
+    fa3: true
+    f2a: true
+    f2a2: true
+    f2a3: true
+    ma2: true
+    ma3: true
+
+  angle:
+    enabled: false
+    hip: true
+    knee: true
+    ankle: true
+
+  device:
+    #    overriding device angle type
+    angle_type: 0
+    angle: true
+    power: true
+    power_z_only: false
+    moment: true
+    moment_dir: 0
+
+  velocity:
+    enabled: false
+    hip: true
+    knee: true
+    ankle: true
+
+  foot: true
+  contact: true
+  activation:
+    leg: false
+    arm: false
+    gait: false
+  left: false
+  grf: true
+
+sample:
+  cycle: 10
+  force_exo: True
