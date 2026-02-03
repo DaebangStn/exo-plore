@@ -11,6 +11,7 @@
 <p align="center">
   <a href="https://daebangstn.github.io/exo-plore/"><b>[Project Page]</b></a> &nbsp;&nbsp;
   <a href="https://arxiv.org/abs/2601.22550"><b>[Paper]</b></a> &nbsp;&nbsp;
+  <a href="https://imolab-my.sharepoint.com/:f:/g/personal/geonholeem_imo_snu_ac_kr/IgBf_s4c-HLHRaNIwgMId1vfAZdPu9mfUIghLRW0Hr4vOTk?e=hsQIvm"><b>[Dataset]</b></a> &nbsp;&nbsp;
 <p align="center">
   <img src="static/images/teaser1.gif" alt="Teaser" width="100%">
 </p>
@@ -44,7 +45,7 @@ See [docs/pipeline.md](docs/pipeline.md) for the full pipeline with step-by-step
 
 See [docs/data.md](docs/data.md) for the complete data directory structure.
 
-Configuration and resources (~105 MB) are under `data/`. Experiment data (~20 GB, distributed separately) are under `experiment_data/`.
+Configuration and resources (~105 MB) are under `data/`. Experiment data (~20 GB) are available for download from [onedrive](https://imolab-my.sharepoint.com/:f:/g/personal/geonholeem_imo_snu_ac_kr/IgBf_s4c-HLHRaNIwgMId1vfAZdPu9mfUIghLRW0Hr4vOTk?e=hsQIvm) and should be placed under `experiment_data/`.
 
 ## Figure Reproduction
 
