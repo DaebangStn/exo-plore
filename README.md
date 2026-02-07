@@ -8,6 +8,8 @@
 
 <sup>1</sup>Seoul National University, <sup>2</sup>Holiday Robotics, <sup>3</sup>Northeastern University
 
+**ICLR 2026**
+
 <p align="center">
   <a href="https://daebangstn.github.io/exo-plore/"><b>[Project Page]</b></a> &nbsp;&nbsp;
   <a href="https://arxiv.org/abs/2601.22550"><b>[Paper]</b></a> &nbsp;&nbsp;
