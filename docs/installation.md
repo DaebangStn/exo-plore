@@ -50,7 +50,18 @@ wget https://zenodo.org/records/XXXXXXX/files/experiment_data.7z
 
 This provides checkpoints, parameter files, and simulation data required for the pipeline.
 
-## 3. Build C++ Components
+## 3. Install DART
+
+Build and install DART v6.13.2 into `libs/dart` using the provided script. The `exo` environment must be active — it provides the compiler toolchain and Python 3.8.
+
+```bash
+micromamba activate exo
+bash scripts/dart_install.sh
+```
+
+The top-level `CMakeLists.txt` adds `libs/dart` to `CMAKE_PREFIX_PATH`, so the build finds it automatically.
+
+## 4. Build C++ Components
 
 ### GUI Build (with visualization)
 
@@ -76,7 +87,7 @@ Edit `CMakePresets.json` to set the correct CUDA architecture for your GPU:
 | RTX 4090 | 8.9 |
 | A6000 | 8.6 |
 
-## 4. Verify Installation
+## 5. Verify Installation
 
 ```bash
 # Test C++ build
